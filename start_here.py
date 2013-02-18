@@ -1,5 +1,5 @@
-"""1 liner to explain this project"""
 #!/usr/bin/env python
+"""1 liner to explain this project"""
 # -*- coding: utf-8 -*-
 # http://www.python.org/dev/peps/pep-0263/
 import argparse

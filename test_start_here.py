@@ -1,5 +1,5 @@
+#!/usr/bin/env python
 """Tests for start_here"""
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # http://www.python.org/dev/peps/pep-0263/
 import unittest
