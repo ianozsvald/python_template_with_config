@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-"""1 liner to explain this project"""
 # -*- coding: utf-8 -*-
 # http://www.python.org/dev/peps/pep-0263/
+"""1 liner to explain this project"""
 import argparse
 import config  # assumes env var PYTHON_TEMPLATE_CONFIG is configured
 
