@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*-
 # http://www.python.org/dev/peps/pep-0263/
 """1 liner to explain this project"""
+from __future__ import division  # 1/2 == 0.5, as in Py3
+from __future__ import absolute_import  # avoid hiding global modules with locals
+from __future__ import print_function  # force use of print("hello")
+from __future__ import unicode_literals  # force unadorned strings "" to be unicode without prepending u""
 import argparse
 import config  # assumes env var PYTHON_TEMPLATE_CONFIG is configured
 
@@ -20,6 +24,6 @@ if __name__ == "__main__":
     parser.add_argument('--optional_arg', '-o', help='optional argument', default="Ian")
 
     args = parser.parse_args()
-    print "These are our args:"
-    print args
-    print "{} {}".format(args.positional_arg, args.optional_arg)
+    print("These are our args:")
+    print(args)
+    print("{} {}".format(args.positional_arg, args.optional_arg))
