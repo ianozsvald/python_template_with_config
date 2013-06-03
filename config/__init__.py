@@ -6,6 +6,7 @@ from __future__ import absolute_import  # avoid hiding global modules with local
 from __future__ import print_function  # force use of print("hello")
 from __future__ import unicode_literals  # force unadorned strings "" to be unicode without prepending u""
 import os
+import logging
 
 # Read PYTHON_TEMPLATE_CONFIG environment variable (raise error if missing or badly
 # configured), use this to decide on our config and import the relevant python
@@ -31,3 +32,13 @@ if config_choice == CONFIG_ENV_VAR_TESTING:
     config_set = True
 if not config_set:
     raise ValueError("ALERT! ENV VAR \"{}\" must be set e.g. \"export {}={}\"".format(CONFIG_ENV_VAR, CONFIG_ENV_VAR, CONFIG_ENV_VAR_TESTING))
+
+# Simple logging configuration, an example output might be:
+# 2013-06-03 15:07:55.740 p7470 {start_here.py:31} INFO - This is an example log message
+LOG_FILE_NAME = "log.log"
+# The date format is ISO 8601, format includes a decimal separator for
+# milliseconds (not the default comma) as dateutil.parser cannot read the
+# command but it can read the decimal separator (both are allowed in ISO 8601)
+logging.basicConfig(filename=LOG_FILE_NAME, level=logging.DEBUG, format='%(asctime)s.%(msecs)d p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+# note that it might be useful to use the ConcurrentLogHandler or
+# RotatingLogHandler here (either require some more setup)

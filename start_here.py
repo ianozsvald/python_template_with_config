@@ -27,3 +27,5 @@ if __name__ == "__main__":
     print("These are our args:")
     print(args)
     print("{} {}".format(args.positional_arg, args.optional_arg))
+
+    config.logging.info("This is an example log message")
