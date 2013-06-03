@@ -7,6 +7,7 @@ This is a template for a simple Python project including:
   * main file with argparse template for command line arguments
   * config folder with simple structure for testing and production environments
   * __future__ imports to make Python 3 porting easier
+  * logging configured with ISO-8601 date (parseable by dateutil.parser), process number, file and line number
 
 Python coding template including ENV environment variable configuration::
 
