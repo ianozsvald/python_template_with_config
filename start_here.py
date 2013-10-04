@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# http://www.python.org/dev/peps/pep-0263/
 """1 liner to explain this project"""
 from __future__ import division  # 1/2 == 0.5, as in Py3
 from __future__ import absolute_import  # avoid hiding global modules with locals
