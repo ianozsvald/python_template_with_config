@@ -1,20 +1,22 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 """Tests for start_here"""
 
 import unittest
 import start_here
+import config
 
-# Usage:
-# $ PYTHON_TEMPLATE_CONFIG=testing python test_start_here.py
-# $ PYTHON_TEMPLATE_CONFIG=testing python -m unittest discover
-
+# Run this using:
+# $ nosetests
+# or
+# $ nosetests -s  # show stdout for the print
 
 class Test(unittest.TestCase):
     def setUp(self):
-        pass
+        # we can specify the configuration we need
+        self.conf = config.get('dev')
 
     def test1(self):
+        print(self.conf)
         self.assertEqual(start_here.dummy_function(), "Hello")
 
 
