@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 """1 liner to explain this project"""
 import argparse
 import config
