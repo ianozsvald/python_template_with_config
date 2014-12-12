@@ -10,6 +10,7 @@ import config
 # or
 # $ nosetests -s  # show stdout for the print
 
+
 class Test(unittest.TestCase):
     def setUp(self):
         # we can specify the configuration we need
@@ -18,6 +19,7 @@ class Test(unittest.TestCase):
     def test1(self):
         print(self.conf)
         self.assertEqual(start_here.dummy_function(), "Hello")
+        self.assertEqual(self.conf.name, "dev")
 
 
 if __name__ == "__main__":
