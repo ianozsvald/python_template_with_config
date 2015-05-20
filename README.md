@@ -70,6 +70,7 @@ Use `py.test` (or `nosetests` if you're old-skool) to run tests, remember that y
   * pip is useful for installing, use `pip freeze > requirements.txt` to free versions of the libraries you're using
   * when logging prefer to use %r or %s in the message rather than more specific types (e.g. %d) as e.g. a %d will raise another exception if None is received but %r can handle the None and a decimal number
   * you might want to add a `utilities` folder for command-line utilities, alongside the `tests`
+  * https://github.com/heynemann/generator-python-package is a package-generator, that might give you more ideas (and, frnakly, maybe it is a whole pile better - I'm open to input!) thx @zemanel
 
 # TODO ?
 
