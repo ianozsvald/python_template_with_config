@@ -2,7 +2,7 @@
 
 This is a template for a Python 3.4+ project including:
 
-  * module structure with a `setup.py`, tests/ folder and a utilities/ folder
+  * module structure with a `setup.py` and a `tests/` folder 
   * unit test with test environment (via environment variable) allowing configuration via a function call
   * main file with argparse template for command line arguments
   * config module with inherited configurations so you can easily add your own
@@ -69,6 +69,7 @@ Use `py.test` (or `nosetests` if you're old-skool) to run tests, remember that y
   * for unit testing it is useful to add coverage with: https://pypi.python.org/pypi/pytest-cov
   * pip is useful for installing, use `pip freeze > requirements.txt` to free versions of the libraries you're using
   * when logging prefer to use %r or %s in the message rather than more specific types (e.g. %d) as e.g. a %d will raise another exception if None is received but %r can handle the None and a decimal number
+  * you might want to add a `utilities` folder for command-line utilities, alongside the `tests`
 
 # TODO ?
 
