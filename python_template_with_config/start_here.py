@@ -3,6 +3,8 @@
 import argparse
 import logging
 from python_template_with_config import config
+from python_template_with_config import another_module  # just to show how to import another module in this package
+
 
 # See the README for notes on running this using either:
 # arguments via __main__
@@ -22,9 +24,11 @@ if __name__ == "__main__":
     # These two lines show a positional (mandatory) argument and an optional argument
     # parser.add_argument('positional_arg', type=str, help='required positional argument')
     parser.add_argument('--env', default="dev", help='optional configuration argument')
+    parser.add_argument('--a_parameter', type=int, default=None, help='some other parameter that is already in the Conf')
     args = parser.parse_args()
 
-    conf = config.get(args.env)  # Note that the environment is optional (it can use a config environment instead)
+    conf = config.get(args.env, overrides=vars(args))  # Note that the environment is optional (it can use a config environment instead)
     logging.info("These are our args: {}".format(args))
     logging.info("This is our configuration: {}".format(conf))
     logging.info("This is an example log message, logging is configured once config.get() has been called")
+    logging.info("The value of a_parameter={}".format(conf.a_parameter))

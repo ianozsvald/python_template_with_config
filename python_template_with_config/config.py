@@ -43,23 +43,23 @@ class ConfDev(ConfBasic):
     """Configuration for development scenario"""
     name = "dev"
 
-    def __init__(self):
+    def __init__(self, overrides):
         super().__init__()
-        self.a_parameter = 42
+        self.a_parameter = overrides.get('a_parameter') or 42
 
 
 class ConfTest(ConfBasic):
     """Example 2nd configuration, a test scenario"""
     name = "test"
 
-    def __init__(self):
+    def __init__(self, overrides):
         super().__init__()
         self.a_parameter = 99
 
 available_configurations = [ConfDev, ConfTest]
 
 
-def get(configuration=None):
+def get(configuration=None, overrides={}):
     """Return a configuration based on name or environment variable"""
     if configuration is None:
         configuration = os.getenv(CONFIG_ENV_VAR)
@@ -68,7 +68,7 @@ def get(configuration=None):
     # match and instantiate it
     for c in available_configurations:
         if c.name == configuration:
-            conf = c()
+            conf = c(overrides)
             return conf
 
     configuration_names = [c.name for c in available_configurations]
