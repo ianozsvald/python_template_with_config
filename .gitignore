@@ -1,4 +1,6 @@
 *.py[cod]
+.ropeproject
+log.log
 
 # C extensions
 *.so
