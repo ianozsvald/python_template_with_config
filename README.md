@@ -1,4 +1,4 @@
-# Example project in a package using modules, tests, logging and configurations
+# Example Python project in a package using modules, tests, logging and configurations
 
 This is a template for a Python 3.4+ project including:
 
