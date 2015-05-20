@@ -56,6 +56,10 @@ Bare in mind that this assumes that `None` (i.e. not provided) signifies that th
 
 NOTE this override mechanism might be overkill for your needs! Feel free to strip out the `overrides` parameter to simplify everything! Alternatively you might want to pick-up an environment variable for overrides instead of passing them in at the command line.
 
+# Further reading
+
+  * http://docs.python-guide.org/en/latest/writing/structure/ How to structure a Python project
+  * https://python-packaging-user-guide.readthedocs.org/en/latest/ Packaging how-to
 
 # Tests
 
