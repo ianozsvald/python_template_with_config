@@ -1,5 +1,4 @@
-python_template_with_config
-===========================
+# Example project in a package using modules, tests, logging and configurations
 
 This is a template for a Python 3.4+ project including:
 
@@ -9,12 +8,12 @@ This is a template for a Python 3.4+ project including:
   * config module with inherited configurations so you can easily add your own
   * logging configured with ISO-8601 date (parseable by dateutil.parser), process number, file and line number
 
-# Installation
+## Installation
 
     $ python setup.py develop  # install locally, it symlinks back to this folder
     $ (python setup.py install)  # probably you *don't want to do this* as this project is useless by itself (once you've customised it, maybe this is what you want to do...)
 
-# Usage
+## Usage
 
 Python coding template including ENV environment variable configuration::
 
@@ -32,7 +31,7 @@ Using `--help` will show the default arguments and all your options:
     -h, --help  show this help message and exit
     --env ENV   optional configuration argument (default: dev)
 
-# Overriding the configuration
+## Overriding the configuration
 
 I've built and used a variety of configuration systems over the years, this is my 'best guess' as to one that works for web microservices (I tend to use Flask), console scripts (e.g. for local usage and Docker) and hacky idea testing.
 
@@ -56,16 +55,16 @@ Bare in mind that this assumes that `None` (i.e. not provided) signifies that th
 
 NOTE this override mechanism might be overkill for your needs! Feel free to strip out the `overrides` parameter to simplify everything! Alternatively you might want to pick-up an environment variable for overrides instead of passing them in at the command line.
 
-# Further reading
+## Further reading
 
   * http://docs.python-guide.org/en/latest/writing/structure/ How to structure a Python project
   * https://python-packaging-user-guide.readthedocs.org/en/latest/ Packaging how-to
 
-# Tests
+## Tests
 
 Use `py.test` (or `nosetests` if you're old-skool) to run tests, remember that you can see stdout if you do `py.test -s` which'll include any logging messages.
 
-# Some notes:
+## Some notes:
 
   * for unit testing it is useful to add coverage with: https://pypi.python.org/pypi/pytest-cov
   * pip is useful for installing, use `pip freeze > requirements.txt` to free versions of the libraries you're using
