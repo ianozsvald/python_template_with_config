@@ -31,6 +31,12 @@ Using `--help` will show the default arguments and all your options:
     -h, --help  show this help message and exit
     --env ENV   optional configuration argument (default: dev)
 
+## Customisation
+
+  * You probably want to edit `logger = logging.getLogger(LOGGER_NAME)` in `config.py` to use your own name (see how it is used in `start_here.py`)
+  * In `config.py` edit at least `ConfDev` (the default configuration) so it has a useful basic configuration for your problem
+  * Add some tests in `tests/`
+
 ## Overriding the configuration
 
 I've built and used a variety of configuration systems over the years, this is my 'best guess' as to one that works for web microservices (I tend to use Flask), console scripts (e.g. for local usage and Docker) and hacky idea testing.

@@ -28,7 +28,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     conf = config.get(args.env, overrides=vars(args))  # Note that the environment is optional (it can use a config environment instead)
-    logging.info("These are our args: {}".format(args))
-    logging.info("This is our configuration: {}".format(conf))
-    logging.info("This is an example log message, logging is configured once config.get() has been called")
-    logging.info("The value of a_parameter={}".format(conf.a_parameter))
+    logger = logging.getLogger("logger_for_template")
+    logger.info("These are our args: {}".format(args))
+    logger.info("This is our configuration: {}".format(conf))
+    logger.info("This is an example log message, logging is configured once config.get() has been called")
+    logger.info("The value of a_parameter={}".format(conf.a_parameter))
+
+    config.configure_logging(logging.CRITICAL)
+    logger.info("This log message won't be shown")
+    logger.critical("This critical message will now be shown!")

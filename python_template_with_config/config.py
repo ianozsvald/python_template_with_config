@@ -7,15 +7,21 @@ import logging
 
 # environment variable for configuration
 CONFIG_ENV_VAR = "CONFIG"
+LOGGER_NAME = "logger_for_template"  # CHOOSE YOUR OWN NAME FOR YOUR APP
 
 
 def configure_logging(log_level):
+    """Configure a logger with sane datetime and path info for the calling function"""
     # configure logging to stdout
-    root = logging.getLogger()
-    root.setLevel(log_level)
+    logger = logging.getLogger(LOGGER_NAME)
+    logger.setLevel(log_level)
+
+    # remove any existing handlers
+    for h in logger.handlers:
+        logger.removeHandler(h)
 
     # only add a new handler if we've not set one yet
-    if len(root.handlers) == 0:
+    if len(logger.handlers) == 0:
         fmt = '%(asctime)s.%(msecs)d p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s'
         datefmt = '%Y-%m-%d %H:%M:%S'
 
@@ -24,7 +30,7 @@ def configure_logging(log_level):
 
         formatter = logging.Formatter(fmt, datefmt=datefmt)
         ch.setFormatter(formatter)
-        root.addHandler(ch)
+        logger.addHandler(ch)
 
 
 class ConfBasic(abc.ABC):
