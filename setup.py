@@ -12,7 +12,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=[],
+    install_requires=["numpy>=1.10"],
     classifiers=[
         'Environment :: Console',
         'Intended Audience :: Developers',
