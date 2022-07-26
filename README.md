@@ -15,7 +15,7 @@ This is a template for a Python 3.4+ project including:
 
 ## Usage
 
-Python coding template including ENV environment variable configuration::
+Python coding template including ENV environment variable configuration:
 
     $ python start_here.py --env=dev
     $ CONFIG=dev python start_here.py 
@@ -31,7 +31,7 @@ Using `--help` will show the default arguments and all your options:
     -h, --help  show this help message and exit
     --env ENV   optional configuration argument (default: dev)
 
-## Customisation
+## Customization
 
   * You probably want to edit `logger = logging.getLogger(LOGGER_NAME)` in `config.py` to use your own name (see how it is used in `start_here.py`)
   * In `config.py` edit at least `ConfDev` (the default configuration) so it has a useful basic configuration for your problem
@@ -63,8 +63,8 @@ NOTE this override mechanism might be overkill for your needs! Feel free to stri
 
 ## Further reading
 
-  * http://docs.python-guide.org/en/latest/writing/structure/ How to structure a Python project
-  * https://python-packaging-user-guide.readthedocs.org/en/latest/ Packaging how-to
+  * [How to structure a Python project - docs.python-guide.org](http://docs.python-guide.org/en/latest/writing/structure/)
+  * [Python Packaging User Guide - packaging.python.org](https://packaging.python.org/en/latest/)
 
 ## Tests
 
